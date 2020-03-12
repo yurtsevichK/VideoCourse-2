@@ -39,5 +39,10 @@ public class Test1 {
         for(String name : hashSet){
             System.out.println(name);
         }
+        // Метод контейнспроверяет есть ли искомое значение, возвращает тру или фолс
+        System.out.println(hashSet.contains("masha"));
+        System.out.println(hashSet.contains("glasha"));
+
+
     }
 }
