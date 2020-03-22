@@ -45,9 +45,11 @@ class Worker {
         }
     }
 
-    public void work() throws InterruptedException {
-        addToList1();
+    public void work() {
+        for (int i = 0; i < 1000; i++){
+            addToList1();
         addtoList2();
+    }
     }
 
     public void main() throws InterruptedException {
@@ -55,22 +57,15 @@ class Worker {
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    work();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                work();
             }
         });
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    work();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                work();
             }
+
         });
         thread1.start();
         thread2.start();
